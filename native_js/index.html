@@ -4,14 +4,43 @@
         <title>Трекер привычек</title>
     </head>
     <body>
-        <div>
-            <form>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+        <div class="container">
+            <form onsubmit="subHandler()">
+                <h1>Трекер привычек</h1>
+                <br>
+                    <div>
+                        <label for="habit-name">Название привычки</label>
+                        <input id="habit-name" required></input>
+                    </div>
+                </br>
+                <br>
+                    <div>
+                        <label for="description">Описание привычки</label>
+                        <textarea id="description" required></textarea>
+                    </div>
+                </br>
+                <div>
+                    <label for="frequency">Частота выполнения</label>
+                    <select id="frequency">
+                        <option value="1">Каждый день</option>
+                        <option value="7">Раз в неделю</option>
+                        <option value="30">Раз в месяц</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="count">Количество повторений</label>
+                    <input id="count" type="number"></input>
+                </div>
+                <div>Общее количество выполнения <span id="sum"></span></div>
+                <button type="submit">Сохранение</button>
+                <button type="button">Необязательная кнопка</button>
             </form>
         </div>
+        <script>
+            function subHandler(e){
+                console.log(e)
+               alert('Сохранение') 
+            }
+        </script>
     </body>
 </html>
