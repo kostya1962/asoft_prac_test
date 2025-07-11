@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="container">
-            <form onsubmit="subHandler()">
+            <form>
                 <h1>Трекер привычек</h1>
                 <br>
                     <div>
@@ -40,16 +40,11 @@
                     <div>Общее количество выполнения <span id="sum"></span></div>
                 </br>
                 <br>
-                    <button type="submit">Сохранение</button>
+                    <button type="submit" id="formel">Сохранение</button>
                     <button type="button">Необязательная кнопка</button>
                 </br>
             </form>
         </div>
-        <script>
-            function subHandler(e){
-                console.log(e)
-               alert('Сохранение') 
-            }
-        </script>
+        <script src="main.js"></script>
     </body>
 </html>
