@@ -1,41 +1,96 @@
-let name = '';
-let description = '';
-let frequency = 0;
-let count = 0;
-let sum = 0;
+const habit = {
+    name: '',
+    description: '',
+    frequency: 0,
+    count: 0,
+    sum: 0,
+};
 
-const nameInput = document.querySelector('#habit-name');
-const descriptionInput = document.querySelector('#description');
-const frequencySelect = document.querySelector('#frequency');
-const countInput = document.querySelector('#count');
-const sumInput = document.querySelector('#sum');
-console.log(nameInput, descriptionInput, frequencySelect, countInput, sumInput);
+const nameMeta = {
+    selector: document.querySelector('#habit-name'),
+    hendler: (ev) => {
+        habit.name = ev.target.value;
+        console.log(habit.name);
+    }
+} 
 
-function nameInputHendler(ev){
-    name = ev.target.value;
-    console.log(name);
+const descMeta = {
+    selector: document.querySelector('#description'),
+    hendler: (ev) => {
+        habit.description = ev.target.value;
+        console.log(habit.description);
+    }
+};
+
+const freqMeta = {
+    selector: document.querySelector('#frequency'),
+    hendler: (ev) => {
+        if(ev.target.value == undefined){
+            habit.frequency = 0;
+        }
+        else {
+            habit.frequency = parseInt(ev.target.value);
+        }
+        setSum();
+        console.log(count);
+    }
+};
+
+const countMeta = {
+    selector: document.querySelector('#count'),
+    hendler: (ev) => {
+        if(ev.target.value == undefined){
+            habit.count = 0;
+        }
+        else {
+            habit.count = parseInt(ev.target.value);
+        }
+        setSum();
+        console.log(typeof habit.count);
+    }
+};
+
+const sumMeta = {
+    selector: document.querySelector('#sum'),
+    hendler: (ev) => {
+        habit.sum = ev.target.value;
+        console.log(habit.sum);
+    }
+};
+
+const metaData = [nameMeta, descMeta, freqMeta, countMeta];
+
+for (const {selector, hendler: handler} of metaData) {
+    if (selector.tagName.toLowerCase() == 'select'){
+        selector.addEventListener('change', handler);
+    }
+    else{
+        selector.addEventListener('input', handler);
+    }
+    console.log(handler)
 }
+sumInput = document.querySelector('#sum');
 
-nameInput.addEventListener('input', nameInputHendler);
+//nameInput.addEventListener('input', nameInputHendler);
 
 function setSum(){
-    sum = frequency * count;
-    sumInput.textContent = sum.toString();
+    habit.sum = habit.frequency * habit.count;
+    window.sumInput.textContent = habit.sum.toString();
 }
 
 setSum();
 function frequencyChange(ev){
     if(ev.target.value == undefined){
-        frequency = 0;
+        habit.frequency = 0;
     }
     else {
-        frequency = parseInt(ev.target.value);
+        habit.frequency = parseInt(ev.target.value);
     }
     setSum();
-    console.log(frequency);
+    console.log(habit.frequency);
 }
 
-frequencySelect.addEventListener('change', frequencyChange);
+//frequencySelect.addEventListener('change', frequencyChange);
 
 setSum();
 function countInputHandler(ev){
@@ -49,11 +104,11 @@ function countInputHandler(ev){
     console.log(count);
 }
 
-countInput.addEventListener('input', countInputHandler);
+//countInput.addEventListener('input', countInputHandler);
 
 
 const formElement = document.querySelector('form');
 formElement.addEventListener('submit', (ev) => {
     ev.preventDefault();
-    console.log(name, description, frequency, count, sum);
+    console.log(habit);
 });
