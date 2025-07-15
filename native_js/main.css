@@ -1,7 +1,7 @@
 :root{
-    --bg-color: rgb(4, 222, 111);
-    --card-bg: white;
-    --button-submit_bg: rgba(46, 108, 110);
+    --bg-color: rgb(196, 252, 223);
+    --card-bg: rgb(240, 240, 240);
+    --button-submit_bg: rgb(62, 207, 212);
 }
 
 body{
@@ -16,15 +16,15 @@ body{
 .container{
     background-color: var(--card-bg);
     border-radius: 10px;
-    padding: 10px;
+    padding: 45px;
     box-shadow: 2px 3px 10px blueviolet;
 }
 
 .container > form{
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    padding: 15px;
+    gap: 0.9rem;
+    padding: 20px;
 }
 
 h1 {
