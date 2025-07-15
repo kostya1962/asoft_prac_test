@@ -1,0 +1,53 @@
+:root{
+    --bg-color: rgb(196, 252, 223);
+    --card-bg: rgb(240, 240, 240);
+    --button-submit_bg: rgb(62, 207, 212);
+}
+
+body{
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+}
+
+.container{
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 45px;
+    box-shadow: 2px 3px 10px blueviolet;
+}
+
+.container > form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form div input, form div select, form div textarea{
+    width: 100%;
+    border-color: none;
+}
+
+button[type="submit"]{
+    background-color: var(--button-submit_bg);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10rem;
+    height: 3rem; 
+}
+
+button[type="submit"]:hover{
+    background-color: rgba(30, 195, 30, 55);
+    cursor: pointer;
+}

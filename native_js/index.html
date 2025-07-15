@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Трекер привычек</title>
+        <link rel="stylesheet" href="main.css"></link>
+    </head>
+    <body>
+        <div class="container">
+            <br>
+                <h1>Трекер привычек</h1>
+                <br>
+                    <div>
+                        <label for="habit-name">Название привычки</label>
+                        <input id="habit-name" required></input>
+                    </div>
+                </br>
+                <br>
+                    <div>
+                        <label for="description">Описание привычки</label>
+                        <textarea id="description" required></textarea>
+                    </div>
+                </br>
+                <br>
+                    <div>
+                        <label for="frequency">Частота выполнения</label>
+                        <select id="frequency">
+                            <option value="1">Каждый день</option>
+                            <option value="7">Раз в неделю</option>
+                            <option value="30">Раз в месяц</option>
+                        </select>
+                    </div>
+                </br>
+                <br>
+                    <div>
+                        <label for="count">Количество повторений</label>
+                        <input id="count" type="number"></input>
+                    </div>
+                </br>
+                <br>
+                    <div>Общее количество выполнения <span id="sum"></span></div>
+                </br>
+                <br>
+                    <button type="submit" id="formel">Сохранение</button>
+                    <button type="button">Необязательная кнопка</button>
+                </br>
+    
+            </form>
+        </div>
+        <script src="/home/kostya/vue-app/native_js/main.js"></script>
+    </body>
+</html>
